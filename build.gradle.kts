@@ -4,7 +4,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
-group = "ru.prplhd.tasktracker"
+group = "ru.prplhd"
 version = "0.0.1-SNAPSHOT"
 
 java {
@@ -23,6 +23,11 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-kafka-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-mail-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    implementation("tools.jackson.core:jackson-databind")
 }
 
 tasks.withType<Test> {
